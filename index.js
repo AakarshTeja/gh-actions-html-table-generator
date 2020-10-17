@@ -43,9 +43,9 @@ const generateRow = (columns, row) => {
     const json = JSON.parse(data);
 
     try {
-        const content = chunk(json, columns).map((row) => generateRow(columns, row));
-        const table = `<table width="100%">${content.join('')}</table>`;
-        console.log(table);
+//         const content = chunk(json, columns).map((row) => generateRow(columns, row));
+//         const table = `<table width="100%">${content.join('')}</table>`;
+//         console.log(table);
         await readmeBox.updateSection("Hello", {
             owner: process.env.GITHUB_REPOSITORY.split('/')[0],
             repo: process.env.GITHUB_REPOSITORY.split('/')[1],
