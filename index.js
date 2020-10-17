@@ -21,9 +21,10 @@ const generateRow = (columns, row) => {
     const cells = row.map((cell) => generateCell(cell));
 
     if (cells.length < columns) {
+        console.log(cells.length,columns);
         cells.push('<td></td>'.repeat(columns - cells.length));
     }
-
+    console.log(`<tr>${cells.join('')}</tr>`);
     return `<tr>${cells.join('')}</tr>`;
 };
 
