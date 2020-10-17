@@ -18,6 +18,7 @@ const generateCell = (cell) => {
 }
 
 const generateRow = (columns, row) => {
+    try{
     const cells = row.map((cell) => generateCell(cell));
 
     if (cells.length < columns) {
@@ -25,6 +26,11 @@ const generateRow = (columns, row) => {
         cells.push('<td></td>'.repeat(columns - cells.length));
     }
     console.log(`<tr>${cells.join('')}</tr>`);
+    }
+    catch(error){
+        console.log(error);
+    }
+    
     return `<tr>${cells.join('')}</tr>`;
 };
 
