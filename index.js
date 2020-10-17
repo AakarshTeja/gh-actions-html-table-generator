@@ -19,6 +19,7 @@ const generateCell = (cell) => {
 
 const generateRow = (columns, row) => {
     try{
+    console.log("Inside Generate row");
     const cells = row.map((cell) => generateCell(cell));
 
     if (cells.length < columns) {
@@ -45,7 +46,7 @@ const generateRow = (columns, row) => {
         const content = chunk(json, columns).map((row) => generateRow(columns, row));
         const table = `<table width="100%">${content.join('')}</table>`;
         console.log(table);
-        await readmeBox.updateSection(table, {
+        await readmeBox.updateSection("Hello", {
             owner: process.env.GITHUB_REPOSITORY.split('/')[0],
             repo: process.env.GITHUB_REPOSITORY.split('/')[1],
             branch: process.env.GITHUB_REF.split('/')[2],
