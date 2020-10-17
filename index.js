@@ -47,5 +47,6 @@ const generateRow = (columns, row) => {
         });
     } catch (error) {
         core.setFailed(JSON.stringify(error));
+        console.log(error);
     }
 })();
